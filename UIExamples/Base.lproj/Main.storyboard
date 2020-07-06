@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,33 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4BI-zB-Z3z">
-                                <rect key="frame" x="162" y="376" width="51" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4BI-zB-Z3z">
+                                <rect key="frame" x="112.66666666666669" y="326.33333333333331" width="150" height="159.66666666666669"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO8-Ug-GWk">
-                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                        <rect key="frame" x="58.333333333333329" y="0.0" width="33" height="30"/>
                                         <state key="normal" title="Alert"/>
                                         <connections>
                                             <action selector="alertButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eEr-LD-Xbd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwI-7f-qUX">
-                                        <rect key="frame" x="0.0" y="30" width="51" height="30"/>
+                                        <rect key="frame" x="49.333333333333329" y="38" width="51" height="30"/>
                                         <state key="normal" title="Activity"/>
                                         <connections>
                                             <action selector="activityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ola-ri-e54"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mg-Op-577">
+                                        <rect key="frame" x="34.333333333333329" y="76" width="81" height="14.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Y1-IK-vXL">
+                                        <rect key="frame" x="0.0" y="98.333333333333371" width="150" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="kwL-qo-qgX"/>
+                                            <constraint firstAttribute="height" constant="2" id="whN-xr-VUZ"/>
+                                        </constraints>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TY4-pD-Zu3">
+                                        <rect key="frame" x="58.666666666666671" y="108.33333333333337" width="32.666666666666671" height="14.333333333333329"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d8t-ma-pyV">
+                                        <rect key="frame" x="15.999999999999986" y="130.66666666666669" width="118.00000000000001" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="JO9-Bj-cf7"/>
+                                            <constraint firstAttribute="width" constant="114" id="xaw-ET-fdd"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="sliderDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="cU7-K9-rf8"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4BI-zB-Z3z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6fg-8e-jlQ"/>
                             <constraint firstItem="4BI-zB-Z3z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="keq-Vf-RoF"/>
+                            <constraint firstItem="4BI-zB-Z3z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="le1-mk-5Rc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="7Y1-IK-vXL" id="rzg-vo-GqT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

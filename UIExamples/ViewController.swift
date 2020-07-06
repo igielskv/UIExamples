@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var progressView: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,6 +29,10 @@ class ViewController: UIViewController {
     @IBAction func activityButtonTapped(_ sender: Any) {
         let activityView = UIActivityViewController(activityItems: ["Data From My App"], applicationActivities: nil)
         present(activityView, animated: true, completion: nil)
+    }
+    
+    @IBAction func sliderDidChange(_ sender: UISlider) {
+        progressView.progress = sender.value
     }
     
 }
