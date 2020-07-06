@@ -24,5 +24,10 @@ class ViewController: UIViewController {
         present(alertController,animated: true, completion: nil)
     }
     
+    @IBAction func activityButtonTapped(_ sender: Any) {
+        let activityView = UIActivityViewController(activityItems: ["Data From My App"], applicationActivities: nil)
+        present(activityView, animated: true, completion: nil)
+    }
+    
 }
 

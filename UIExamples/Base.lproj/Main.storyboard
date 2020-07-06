@@ -16,13 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4BI-zB-Z3z">
-                                <rect key="frame" x="171" y="391" width="33" height="30"/>
+                                <rect key="frame" x="162" y="376" width="51" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO8-Ug-GWk">
-                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
                                         <state key="normal" title="Alert"/>
                                         <connections>
                                             <action selector="alertButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eEr-LD-Xbd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwI-7f-qUX">
+                                        <rect key="frame" x="0.0" y="30" width="51" height="30"/>
+                                        <state key="normal" title="Activity"/>
+                                        <connections>
+                                            <action selector="activityButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ola-ri-e54"/>
                                         </connections>
                                     </button>
                                 </subviews>
