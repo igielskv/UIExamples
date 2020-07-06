@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,12 @@ class ViewController: UIViewController {
     
     @IBAction func sliderDidChange(_ sender: UISlider) {
         progressView.progress = sender.value
+        
+        if progressView.progress == 1.0 {
+            activityIndicator.stopAnimating()
+        } else {
+            activityIndicator.startAnimating()
+        }
     }
     
 }
